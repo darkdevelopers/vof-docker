@@ -1,7 +1,7 @@
 version: "3"
 services:
   mariadb:
-    container_name: vof_shop_database
+    container_name: vof_shop_database_dev
     image: mariadb:latest
     env_file:
       - ./config/mariadb/enviroment.env
@@ -10,4 +10,12 @@ services:
     ports:
       - "3306:3306"
     restart: always
-
+  web:
+    container_name: vof_shop_nginx_dev
+    volumes:
+      - ./html/:/html/
+      - ./logs/nginx:/logs/nginx
+      - ./config/nginx/xdebug:/etc/nginx/xdebug
+      - ./config/nginx/hosts:/etc/nginx/hosts
+      - ./config/nginx/init.conf:/etc/nginx/conf.d/default.conf
+    restart: always
