@@ -5,9 +5,8 @@ read bbUsername
 rm -rf html
 git clone https://$bbUsername@bitbucket.org/vofvapeshop/shop.vof.laravel.git html
 cd html
-composer install
-composer update
-php artisan vendor:publish --all
-php artisan migrate
-php artisan aimeos:setup
-php artisan aimeos:cache
+docker-compose exec php composer install
+docker-compose exec php php artisan vendor:publish --all
+docker-compose exec php php artisan migrate
+docker-compose exec php php artisan aimeos:setup
+docker-compose exec php php artisan aimeos:cache
