@@ -1,5 +1,26 @@
 #!/bin/bash
-echo "Start the install scripts"
+#
+# Usage: bin/install
+# Description: Prepare the VOF docker env for first usage
+#
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+introduction() {
+    echo -e "${NC}Start the install scripts ${NC} 🐳  🚀 \n"
+    echo ""
+    echo -e "${NC}Dieses Installationsskript führt Dich durch die notwendigen Schritte um die Docker-Environment nutzen zu können.${NC}\n"
+    echo -e "${NC}Falls einer der Schritte fehl schlägt kannst du den Setup einfach noch mal starten.${NC}\n"
+
+    echo -e "${NC}Du benötigst:\n${NC}"
+    echo -e "  ${NC}1. Ein SSH-Key-Paar das mit deinem Bitbucket Account verknüpft ist, so dass du die einzelnen Module klonen und bearbeiten kannst.${NC}"
+}
+
+introduction
+
 echo "Enter your Bitbucket Username"
 read bbUsername
 rm -rf html
