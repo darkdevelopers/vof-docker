@@ -1,0 +1,8 @@
+.idea/
+html/
+data/mariadb/
+logs/nginx/access.log
+logs/nginx/error.log
+logs/nginx/*
+logs/php-fpm/*
+logs/xdebug/*
