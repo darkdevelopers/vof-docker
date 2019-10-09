@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "Start the install scripts"
+echo "Enter your Bitbucket Username"
+read bbUsername
+rm -rf html
+git clone https://$bbUsername@bitbucket.org/vofvapeshop/shop.vof.laravel.git html
