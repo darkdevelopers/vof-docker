@@ -1,0 +1,36 @@
+#!/bin/bash
+homedir=$(echo ~)
+sshconfig=$homedir/.ssh/config
+sshdir=$homedir/.ssh/
+
+
+if [ ! -e "$sshconfig" ]; then
+    touch $sshconfig
+    echo "+ SSH CONFIG CREATED"
+fi
+
+grepResult=$(grep bitbucket.org ~/.ssh/config)
+
+if [ ! -z "$grepResult" ]; then
+    echo "Existing Bitbucket entry found."
+    exit 1
+fi
+echo $grepResult
+echo "Creating Bitbucket.org ssh key."
+echo "Please enter your Bitbucket Username:"
+read bbUsername
+
+sshfile=$sshdir$(echo Bitbucket-$bbUsername)
+
+ssh-keygen -b 2048 -t rsa -f $sshdir$(echo Bitbucket-$bbUsername) -q -N ""
+
+echo -e "Host bitbucket.org\r\n\tUser $bbUsername\r\n\tHostName bitbucket.org\r\n\tIdentityFile $sshfile" >> $sshconfig
+echo ""
+echo "Your key is now in your 'clipboard'"
+echo "Past now your public key to Repo."
+
+cat $sshfile.pub | pbcopy
+echo ""
+echo "All Done"
+
+exit 1
