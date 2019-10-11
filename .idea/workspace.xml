@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="59a633a6-7316-43f7-bef2-bb87c69f38c9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/vof-docker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vof-docker.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/install" beforeDir="false" afterPath="$PROJECT_DIR$/bin/install" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/php/dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/config/php/dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/html/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,7 +13,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/html/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
@@ -21,8 +21,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+            <state relative-caret-position="135">
+              <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -39,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/install">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="44" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
+            <state relative-caret-position="480">
+              <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -51,34 +51,39 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/php/dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/html/composer.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+            <state>
+              <caret column="3" selection-start-column="3" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/mariadb/enviroment.env">
+        <entry file="file://$PROJECT_DIR$/html/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="79" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="79" />
+            <state relative-caret-position="306">
+              <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/html/.env.example">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ai</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/html" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -93,116 +98,109 @@
         <option value="$PROJECT_DIR$/html/public/index.html" />
         <option value="$PROJECT_DIR$/config/php/custom.conf" />
         <option value="$PROJECT_DIR$/config/php/xdebug.ini" />
-        <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/html/public/index.php" />
         <option value="$PROJECT_DIR$/html/config/database.php" />
+        <option value="$PROJECT_DIR$/config/php/dockerfile" />
         <option value="$PROJECT_DIR$/html/.env" />
+        <option value="$PROJECT_DIR$/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/html/composer.json" />
         <option value="$PROJECT_DIR$/html/.env.example" />
         <option value="$PROJECT_DIR$/bin/install" />
-        <option value="$PROJECT_DIR$/config/php/dockerfile" />
-        <option value="$PROJECT_DIR$/html/composer.json" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
-      <path value="$PROJECT_DIR$/html/vendor/doctrine/lexer" />
-      <path value="$PROJECT_DIR$/html/vendor/doctrine/inflector" />
-      <path value="$PROJECT_DIR$/html/vendor/doctrine/event-manager" />
-      <path value="$PROJECT_DIR$/html/vendor/zendframework/zend-diactoros" />
-      <path value="$PROJECT_DIR$/html/vendor/phar-io/version" />
-      <path value="$PROJECT_DIR$/html/vendor/doctrine/instantiator" />
-      <path value="$PROJECT_DIR$/html/vendor/phar-io/manifest" />
-      <path value="$PROJECT_DIR$/html/vendor/doctrine/cache" />
-      <path value="$PROJECT_DIR$/html/vendor/facade/ignition" />
-      <path value="$PROJECT_DIR$/html/vendor/facade/flare-client-php" />
-      <path value="$PROJECT_DIR$/html/vendor/facade/ignition-contracts" />
-      <path value="$PROJECT_DIR$/html/vendor/theseer/tokenizer" />
-      <path value="$PROJECT_DIR$/html/vendor/erusev/parsedown" />
-      <path value="$PROJECT_DIR$/html/vendor/jakub-onderka/php-console-color" />
-      <path value="$PROJECT_DIR$/html/vendor/jakub-onderka/php-console-highlighter" />
-      <path value="$PROJECT_DIR$/html/vendor/sebastian/code-unit-reverse-lookup" />
-      <path value="$PROJECT_DIR$/html/vendor/sebastian/resource-operations" />
-      <path value="$PROJECT_DIR$/html/vendor/sebastian/exporter" />
-      <path value="$PROJECT_DIR$/html/vendor/sebastian/environment" />
-      <path value="$PROJECT_DIR$/html/vendor/sebastian/comparator" />
-      <path value="$PROJECT_DIR$/html/vendor/sebastian/version" />
-      <path value="$PROJECT_DIR$/html/vendor/sebastian/type" />
-      <path value="$PROJECT_DIR$/html/vendor/sebastian/diff" />
-      <path value="$PROJECT_DIR$/html/vendor/sebastian/object-reflector" />
-      <path value="$PROJECT_DIR$/html/vendor/sebastian/object-enumerator" />
-      <path value="$PROJECT_DIR$/html/vendor/sebastian/recursion-context" />
-      <path value="$PROJECT_DIR$/html/vendor/sebastian/global-state" />
-      <path value="$PROJECT_DIR$/html/vendor/opis/closure" />
-      <path value="$PROJECT_DIR$/html/vendor/psr/simple-cache" />
-      <path value="$PROJECT_DIR$/html/vendor/psr/log" />
-      <path value="$PROJECT_DIR$/html/vendor/psr/http-message" />
-      <path value="$PROJECT_DIR$/html/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/html/vendor/symfony/console" />
       <path value="$PROJECT_DIR$/html/vendor/egulias/email-validator" />
-      <path value="$PROJECT_DIR$/html/vendor/dragonmantank/cron-expression" />
-      <path value="$PROJECT_DIR$/html/vendor/symfony/var-dumper" />
-      <path value="$PROJECT_DIR$/html/vendor/mockery/mockery" />
-      <path value="$PROJECT_DIR$/html/vendor/doctrine/dbal" />
-      <path value="$PROJECT_DIR$/html/vendor/monolog/monolog" />
-      <path value="$PROJECT_DIR$/html/vendor/nikic/php-parser" />
-      <path value="$PROJECT_DIR$/html/vendor/dnoegel/php-xdg-base-dir" />
-      <path value="$PROJECT_DIR$/html/vendor/myclabs/deep-copy" />
-      <path value="$PROJECT_DIR$/html/vendor/phpoption/phpoption" />
-      <path value="$PROJECT_DIR$/html/vendor/nesbot/carbon" />
-      <path value="$PROJECT_DIR$/html/vendor/psy/psysh" />
-      <path value="$PROJECT_DIR$/html/vendor/tijsverkoyen/css-to-inline-styles" />
-      <path value="$PROJECT_DIR$/html/vendor/fzaninotto/faker" />
-      <path value="$PROJECT_DIR$/html/vendor/ramsey/uuid" />
-      <path value="$PROJECT_DIR$/html/vendor/paragonie/random_compat" />
-      <path value="$PROJECT_DIR$/html/vendor/fideloper/proxy" />
-      <path value="$PROJECT_DIR$/html/vendor/webmozart/assert" />
-      <path value="$PROJECT_DIR$/html/vendor/composer" />
-      <path value="$PROJECT_DIR$/html/vendor/filp/whoops" />
       <path value="$PROJECT_DIR$/html/vendor/vlucas/phpdotenv" />
-      <path value="$PROJECT_DIR$/html/vendor/swiftmailer/swiftmailer" />
-      <path value="$PROJECT_DIR$/html/vendor/laravel/framework" />
-      <path value="$PROJECT_DIR$/html/vendor/laravel/tinker" />
-      <path value="$PROJECT_DIR$/html/vendor/scrivo/highlight.php" />
-      <path value="$PROJECT_DIR$/html/vendor/league/flysystem" />
-      <path value="$PROJECT_DIR$/html/vendor/phpspec/prophecy" />
-      <path value="$PROJECT_DIR$/html/vendor/aimeos/aimeos-laravel" />
-      <path value="$PROJECT_DIR$/html/vendor/aimeos/aimeos-core" />
+      <path value="$PROJECT_DIR$/html/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/html/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/html/vendor/composer" />
+      <path value="$PROJECT_DIR$/html/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/html/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/html/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/html/vendor/symfony/http-foundation" />
-      <path value="$PROJECT_DIR$/html/vendor/symfony/psr-http-message-bridge" />
-      <path value="$PROJECT_DIR$/html/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/html/vendor/symfony/event-dispatcher-contracts" />
-      <path value="$PROJECT_DIR$/html/vendor/phpunit/phpunit" />
       <path value="$PROJECT_DIR$/html/vendor/symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/html/vendor/phpunit/php-code-coverage" />
-      <path value="$PROJECT_DIR$/html/vendor/symfony/translation" />
-      <path value="$PROJECT_DIR$/html/vendor/nunomaduro/collision" />
-      <path value="$PROJECT_DIR$/html/vendor/phpunit/php-token-stream" />
       <path value="$PROJECT_DIR$/html/vendor/symfony/polyfill-ctype" />
-      <path value="$PROJECT_DIR$/html/vendor/phpdocumentor/reflection-common" />
-      <path value="$PROJECT_DIR$/html/vendor/phpunit/php-text-template" />
       <path value="$PROJECT_DIR$/html/vendor/symfony/css-selector" />
-      <path value="$PROJECT_DIR$/html/vendor/phpdocumentor/type-resolver" />
-      <path value="$PROJECT_DIR$/html/vendor/phpunit/php-file-iterator" />
       <path value="$PROJECT_DIR$/html/vendor/symfony/event-dispatcher" />
-      <path value="$PROJECT_DIR$/html/vendor/phpdocumentor/reflection-docblock" />
-      <path value="$PROJECT_DIR$/html/vendor/phpunit/php-timer" />
       <path value="$PROJECT_DIR$/html/vendor/symfony/routing" />
       <path value="$PROJECT_DIR$/html/vendor/symfony/finder" />
       <path value="$PROJECT_DIR$/html/vendor/symfony/http-kernel" />
       <path value="$PROJECT_DIR$/html/vendor/symfony/polyfill-php73" />
       <path value="$PROJECT_DIR$/html/vendor/symfony/polyfill-intl-idn" />
-      <path value="$PROJECT_DIR$/html/vendor/hamcrest/hamcrest-php" />
       <path value="$PROJECT_DIR$/html/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/html/vendor/symfony/var-dumper" />
       <path value="$PROJECT_DIR$/html/vendor/symfony/polyfill-iconv" />
       <path value="$PROJECT_DIR$/html/vendor/symfony/mime" />
       <path value="$PROJECT_DIR$/html/vendor/symfony/service-contracts" />
       <path value="$PROJECT_DIR$/html/vendor/symfony/debug" />
       <path value="$PROJECT_DIR$/html/vendor/symfony/process" />
-      <path value="$PROJECT_DIR$/html/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/html/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/html/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/html/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/html/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/html/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/html/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/html/vendor/erusev/parsedown" />
+      <path value="$PROJECT_DIR$/html/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/html/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/html/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/html/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/html/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/html/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/html/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/html/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/html/vendor/facade/ignition" />
+      <path value="$PROJECT_DIR$/html/vendor/scrivo/highlight.php" />
+      <path value="$PROJECT_DIR$/html/vendor/facade/ignition-contracts" />
+      <path value="$PROJECT_DIR$/html/vendor/facade/flare-client-php" />
+      <path value="$PROJECT_DIR$/html/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/html/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/html/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/html/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/html/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/html/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/html/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/html/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/html/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/html/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/html/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/html/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/html/vendor/fideloper/proxy" />
+      <path value="$PROJECT_DIR$/html/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/html/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/html/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/html/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/html/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/html/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/html/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/html/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/html/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/html/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/html/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/html/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/html/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/html/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/html/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/html/vendor/jakub-onderka/php-console-highlighter" />
+      <path value="$PROJECT_DIR$/html/vendor/jakub-onderka/php-console-color" />
+      <path value="$PROJECT_DIR$/html/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/html/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/html/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/html/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/html/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/html/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/html/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/html/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/html/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/html/vendor/predis/predis" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-3841" />
+    <option name="x" value="-3840" />
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="1027" />
@@ -256,13 +254,85 @@
             <path>
               <item name="vof-docker" type="b2602c69:ProjectViewProjectNode" />
               <item name="vof-docker" type="462c0819:PsiDirectoryNode" />
-              <item name="logs" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vof-docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vof-docker" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vof-docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vof-docker" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vof-docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vof-docker" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vof-docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vof-docker" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vof-docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vof-docker" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vof-docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vof-docker" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vof-docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vof-docker" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vof-docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vof-docker" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="cache" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vof-docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vof-docker" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="cache" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vof-docker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vof-docker" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="vof-docker" type="b2602c69:ProjectViewProjectNode" />
               <item name="vof-docker" type="462c0819:PsiDirectoryNode" />
               <item name="logs" type="462c0819:PsiDirectoryNode" />
-              <item name="nginx" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -274,12 +344,16 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/html" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/html" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -307,18 +381,19 @@
       <option name="presentableId" value="Default" />
       <updated>1570630667734</updated>
       <workItem from="1570630668989" duration="5812000" />
-      <workItem from="1570776140081" duration="434000" />
+      <workItem from="1570776140081" duration="1486000" />
+      <workItem from="1570779510085" duration="1790000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6246000" />
+    <option name="totallyTimeSpent" value="9088000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3841" y="23" width="1920" height="1027" extended-state="0" />
+    <frame x="-3840" y="23" width="1920" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25239617" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2550586" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -390,9 +465,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logs/nginx/error.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/nginx/hosts/vof-local.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -416,30 +488,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/html/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="166" column="11" selection-start-line="166" selection-start-column="11" selection-end-line="166" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/.env" />
-    <entry file="file://$PROJECT_DIR$/html/.env.example">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+        <state relative-caret-position="408">
+          <caret line="121" column="49" selection-start-line="121" selection-start-column="41" selection-end-line="121" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -453,6 +503,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/logs/nginx/error.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-702" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2490">
+          <caret line="166" column="11" selection-start-line="166" selection-start-column="11" selection-end-line="166" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/config/cache.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-113" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/mariadb/enviroment.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -460,24 +530,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/install">
+    <entry file="file://$PROJECT_DIR$/html/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="44" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
+        <state relative-caret-position="135">
+          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/php/dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+        <state>
+          <caret column="3" selection-start-column="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/html/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        <state relative-caret-position="306">
+          <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/.env.example">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/install">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
         </state>
       </provider>
     </entry>
