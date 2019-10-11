@@ -35,7 +35,7 @@ installLaravel() {
     docker-compose up -d
     docker-compose exec php composer install
     docker-compose exec php php artisan ui vue
-    docker-compose exec php npm install && npn run dev
+    docker-compose exec php npm install && npm run dev
 }
 
 introduction
