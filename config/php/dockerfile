@@ -15,5 +15,6 @@ RUN docker-php-ext-install json
 RUN docker-php-ext-install mbstring
 RUN docker-php-ext-install tokenizer
 RUN docker-php-ext-install xml
+RUN docker-php-ext-install gd
 
 WORKDIR /html
