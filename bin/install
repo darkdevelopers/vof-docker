@@ -19,15 +19,19 @@ introduction() {
     echo -e "  ${NC}1. Ein SSH-Key-Paar das mit deinem Bitbucket Account verknüpft ist, so dass du die einzelnen Module klonen und bearbeiten kannst.${NC}"
 }
 
-introduction
+downloadProject() {
+    echo -e "${NC}Enter your Bitbucket Username ${NC} \n"
+    read bbUsername
+    rm -rf html
+    git clone https://$bbUsername@bitbucket.org/vofvapeshop/shop.vof.laravel.git html
+    cd html
+}
 
-echo "Enter your Bitbucket Username"
-read bbUsername
-rm -rf html
-git clone https://$bbUsername@bitbucket.org/vofvapeshop/shop.vof.laravel.git html
-cd html
-docker-compose exec php composer install
-docker-compose exec php php artisan vendor:publish --all
-docker-compose exec php php artisan migrate
-docker-compose exec php php artisan aimeos:setup
-docker-compose exec php php artisan aimeos:cache
+installLaravel() {
+    echo -e "${NC}Install Project ${NC} \n"
+    docker-compose exec php composer install
+}
+
+introduction
+downloadProject
+installLaravel
