@@ -22,7 +22,7 @@ introduction() {
 }
 
 downloadProject() {
-    echo -e "${NC}Enter your Bitbucket Username ${NC} \n"
+    echo -e "${NC}Enter your Bitbucket Username ${NC}"
     read bbUsername
     rm -rf html
     git clone https://$bbUsername@bitbucket.org/vofvapeshop/shop.vof.laravel.git html
@@ -36,6 +36,7 @@ installLaravel() {
     docker-compose exec php composer install
     docker-compose exec php php artisan ui vue
     docker-compose exec php npm install && npm run dev
+    docker-compose exec php php artisan migrate
 }
 
 introduction
