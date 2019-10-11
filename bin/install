@@ -17,6 +17,7 @@ introduction() {
 
     echo -e "${NC}Du benötigst:\n${NC}"
     echo -e "  ${NC}1. Ein SSH-Key-Paar das mit deinem Bitbucket Account verknüpft ist, so dass du die einzelnen Module klonen und bearbeiten kannst.${NC}"
+    echo -e "${NC} Shutdown docker ${NC}"
     docker-compose down
 }
 
@@ -30,9 +31,11 @@ downloadProject() {
 
 installLaravel() {
     echo -e "${NC}Install Project ${NC} \n"
-    docker-compose up
+    echo -e "${NC} start docker ${NC}"
+    docker-compose up -d
     docker-compose exec php composer install
 }
 
 introduction
 downloadProject
+installLaravel
