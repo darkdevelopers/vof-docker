@@ -49,3 +49,6 @@ services:
     volumes:
       - ./config/sshagent/keys:/root/.ssh
       - sshagent:/.ssh-agent
+volumes:
+  sshagent:
+    driver: local

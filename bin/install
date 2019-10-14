@@ -22,6 +22,9 @@ introduction() {
 }
 
 downloadProject() {
+    echo -e "${NC} COPY SSH KEY${NC}"
+    cp ~/.ssh/bitbucket.org ./config/sshagent/keys
+    echo -e ""
     echo -e "${NC}Cloning Shop repo ${NC}"
     rm -rf html
     git clone git@bitbucket.org-vof:vofvapeshop/shop.vof.laravel.git html
