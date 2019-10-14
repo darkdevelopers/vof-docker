@@ -42,3 +42,10 @@ services:
       - mariadb
     depends_on:
       - mariadb
+  sshagent:
+    build:
+      context: ./config/sshagent
+      dockerfile: dockerfile
+    volumes:
+      - ./config/sshagent/keys:/root/.ssh
+      - sshagent:/.ssh-agent

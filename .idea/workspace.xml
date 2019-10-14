@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59a633a6-7316-43f7-bef2-bb87c69f38c9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config/sshagent/dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/sshagent/keys/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/sshagent/run.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +29,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/html" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -167,7 +171,7 @@
       <workItem from="1570786307478" duration="3250000" />
       <workItem from="1570793908299" duration="2232000" />
       <workItem from="1571055896880" duration="3062000" />
-      <workItem from="1571064268683" duration="350000" />
+      <workItem from="1571064268683" duration="1095000" />
     </task>
     <servers />
   </component>
