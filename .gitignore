@@ -6,3 +6,4 @@ logs/nginx/error.log
 logs/nginx/*
 logs/php-fpm/*
 logs/xdebug/*
+config/sshagent/keys/*
