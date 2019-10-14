@@ -1,6 +1,8 @@
 # vof-docker
 Here we create a new Shop!
 ## TODO
+### Debugbar 
+https://github.com/barryvdh/laravel-debugbar
 ### DEPLOYROBOT
 https://deploybot.com
 ### LARAVEL + eCommerce
