@@ -22,5 +22,6 @@ RUN docker-php-ext-install zip
 RUN apt-get -y install curl gnupg
 RUN curl -sL https://deb.nodesource.com/setup_12.x  | bash -
 RUN apt-get -y install nodejs
+RUN apt-get -y install git
 
 WORKDIR /html
