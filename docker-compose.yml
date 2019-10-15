@@ -49,8 +49,8 @@ services:
       - sshagent
   sshagent:
     build:
-      context: ./config/sshagent
       dockerfile: dockerfile
+      context: ./config/sshagent
     volumes:
       - ./config/sshagent/keys:/root/.ssh
       - sshagent:/.ssh-agent
