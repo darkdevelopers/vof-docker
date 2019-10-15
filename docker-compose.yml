@@ -40,8 +40,8 @@ services:
       - ./config/php/custom.conf:/usr/local/etc/php-fpm.d/zz-custom.conf:cached
       - ./config/php/xdebug.ini:/usr/local/etc/php/conf.d/zz-xdebug.ini:cached
       - ./logs/php-fpm/:/tmp/xdebug_log:cached
-      - sshagent:/.ssh-agent
-      - ./config/sshagent/keys/config:/root/.ssh/config
+      - sshagent:/root/.ssh-agent
+      - ./config/sshagent/keys:/root/.ssh
     links:
       - mariadb
     depends_on:
@@ -53,7 +53,7 @@ services:
       context: ./config/sshagent
     volumes:
       - ./config/sshagent/keys:/root/.ssh
-      - sshagent:/.ssh-agent
+      - sshagent:/root/.ssh-agent
 volumes:
   sshagent:
     driver: local
