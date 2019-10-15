@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/html" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/html/ext.laravel.vof.admin" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/html/package/vof/ext.laravel.vof.admin" vcs="Git" />
   </component>
 </project>
