@@ -18,7 +18,7 @@ Host bitbucket.org-vof
   HostName bitbucket.org
   User git
   AddKeysToAgent yes
-  UseKeychain yes
+  #UseKeychain yes
   IdentityFile ~/.ssh/bitbucket.org
 ``` 
 ### SSH Key generate

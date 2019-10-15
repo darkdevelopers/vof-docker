@@ -23,7 +23,7 @@ introduction() {
 
 downloadProject() {
     echo -e "${NC} COPY SSH KEY${NC}"
-    cp ~/.ssh/bitbucket.org ./config/sshagent/keys
+    cp ~/.ssh/* ./config/sshagent/keys
     cp ~/.ssh/config ./config/sshagent/keys
     echo -e ""
     echo -e "${NC}Cloning Shop repo ${NC}"
