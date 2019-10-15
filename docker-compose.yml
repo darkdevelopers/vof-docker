@@ -41,6 +41,7 @@ services:
       - ./config/php/xdebug.ini:/usr/local/etc/php/conf.d/zz-xdebug.ini:cached
       - ./logs/php-fpm/:/tmp/xdebug_log:cached
       - sshagent:/.ssh-agent
+      - ./config/sshagent/keys/config:/root/.ssh/config
     links:
       - mariadb
     depends_on:
