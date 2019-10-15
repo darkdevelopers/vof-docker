@@ -32,28 +32,14 @@ services:
     build:
       dockerfile: dockerfile
       context: ./config/php/
-    environment:
-      SSH_AUTH_SOCK: /.ssh-agent/proxy-socket
     volumes:
       - ./html/:/html/:cached
       - ./logs/xdebug:/logs/xdebug:cached
       - ./config/php/custom.conf:/usr/local/etc/php-fpm.d/zz-custom.conf:cached
       - ./config/php/xdebug.ini:/usr/local/etc/php/conf.d/zz-xdebug.ini:cached
       - ./logs/php-fpm/:/tmp/xdebug_log:cached
-      - sshagent:/root/.ssh-agent
       - ./config/sshagent/keys:/root/.ssh
     links:
       - mariadb
     depends_on:
       - mariadb
-      - sshagent
-  sshagent:
-    build:
-      dockerfile: dockerfile
-      context: ./config/sshagent
-    volumes:
-      - ./config/sshagent/keys:/root/.ssh
-      - sshagent:/root/.ssh-agent
-volumes:
-  sshagent:
-    driver: local
