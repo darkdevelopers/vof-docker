@@ -24,16 +24,8 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>ai</find>
-      <find>example-component</find>
-      <find>enviroment</find>
-      <find>sshagent</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/html" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -142,6 +134,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/html/vendor/vof/ext.laravel.vof.admin/src/translations/lang" />
       <recent name="$PROJECT_DIR$/html/vendor/vof/ext.laravel.vof.admin/src/assets/css" />
       <recent name="$PROJECT_DIR$/html/vendor/vof/ext.laravel.vof.admin/src/Controllers" />
       <recent name="$PROJECT_DIR$/html/vendor/vof/ext.laravel.vof.admin/src" />
