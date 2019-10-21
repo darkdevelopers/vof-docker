@@ -4,6 +4,10 @@
     <list default="true" id="59a633a6-7316-43f7-bef2-bb87c69f38c9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/install" beforeDir="false" afterPath="$PROJECT_DIR$/bin/install" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/html/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/app/Exceptions/Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/html/config/auth.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +29,16 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/html" />
+  </component>
+  <component name="PhpServers">
+    <servers>
+      <server host="vof.local" id="99995390-9b10-4f25-b30b-0e4027107a15" name="vof.local" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$/html" remote-root="/html" />
+        </path_mappings>
+      </server>
+    </servers>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -125,22 +138,24 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/html/resources/views/layouts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/html/vendor/vof/ext.laravel.vof.admin/src/app/Middleware" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="copyright.profiles" />
+    <property name="settings.editor.selected.configurable" value="copyright" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/html/vendor/vof/ext.laravel.vof.admin/src/translations/lang" />
-      <recent name="$PROJECT_DIR$/html/vendor/vof/ext.laravel.vof.admin/src/assets/css" />
-      <recent name="$PROJECT_DIR$/html/vendor/vof/ext.laravel.vof.admin/src/Controllers" />
-      <recent name="$PROJECT_DIR$/html/vendor/vof/ext.laravel.vof.admin/src" />
-      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/html/vendor/vof/ext.laravel.vof.admin/src/resources" />
+      <recent name="$PROJECT_DIR$/html/vendor/vof/ext.laravel.vof.admin/src/app" />
+      <recent name="$PROJECT_DIR$/html/vendor/vof/ext.laravel.vof.admin/src/app/Http" />
+      <recent name="$PROJECT_DIR$/html/vendor/vof/ext.laravel.vof.admin/src/Test" />
+      <recent name="$PROJECT_DIR$/html/vendor/vof/ext.laravel.vof.admin/tests" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/html/vendor/vof/ext.laravel.vof.admin/src/app/Middleware" />
+      <recent name="$PROJECT_DIR$/html/vendor/vof/ext.laravel.vof.admin/src/app/Exceptions" />
       <recent name="$PROJECT_DIR$/html/resources/views/layouts" />
       <recent name="$PROJECT_DIR$/html" />
     </key>
@@ -156,6 +171,11 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" nameIsGenerated="true" server_name="vof.local">
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
