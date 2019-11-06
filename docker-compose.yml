@@ -17,7 +17,7 @@ services:
     container_name: vof_shop_nginx_dev
     image: nginx:latest
     ports:
-      - "80:80"
+      - "64009:80"
     volumes:
       - ./html/:/html/:cached
       - ./logs/nginx:/logs/nginx:cached
