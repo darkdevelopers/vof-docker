@@ -43,6 +43,7 @@ installLaravel() {
     docker-compose exec php npm run dev
     docker-compose exec php php artisan migrate
     docker-compose exec php php artisan vendor:publish --tag="ext.laravel.vof.admin" --force
+    docker-compose exec php php artisan vendor:publish --tag="ext.laravel.vof.category" --force
 }
 
 introduction
