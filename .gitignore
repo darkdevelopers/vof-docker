@@ -7,3 +7,5 @@ logs/nginx/*
 logs/php-fpm/*
 logs/xdebug/*
 config/sshagent/keys/*
+data/
+.idea/vof-docker.iml
