@@ -47,6 +47,7 @@ installLaravel() {
 }
 addsshkeys(){
     echo -e "${NC}Include SSH Keys${NC}\n"
+    docker-compose exec sshagentcontainer /run.sh ssh-add
     docker-compose exec sshagentcontainer /run.sh unlock-ssh-keys
 }
 
