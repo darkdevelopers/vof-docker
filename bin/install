@@ -23,7 +23,7 @@ introduction() {
 
 downloadProject() {
     echo -e "${NC} COPY SSH KEY${NC}"
-    cp ~/.ssh/* ./config/sshagent/keys
+    cp ~/.ssh/bitbucket.org* ./config/sshagent/keys
     cp ~/.ssh/config ./config/sshagent/keys
     echo -e ""
     echo -e "${NC}Cloning Shop repo ${NC}"
@@ -47,7 +47,7 @@ installLaravel() {
 }
 addsshkeys(){
     echo -e "${NC}Include SSH Keys${NC}\n"
-    docker-compose exec sshagent /run.sh unlock-ssh-keys
+    docker-compose exec sshagentcontainer /run.sh unlock-ssh-keys
 }
 
 introduction
