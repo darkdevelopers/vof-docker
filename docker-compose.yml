@@ -32,17 +32,20 @@ services:
     build:
       dockerfile: dockerfile
       context: ./config/php/
+    environment:
+      SSH_AUTH_SOCK: /.ssh-agent/proxy-socket
     volumes:
       - ./html/:/html/:cached
       - ./logs/xdebug:/logs/xdebug:cached
       - ./config/php/custom.conf:/usr/local/etc/php-fpm.d/zz-custom.conf:cached
       - ./config/php/xdebug.ini:/usr/local/etc/php/conf.d/zz-xdebug.ini:cached
       - ./logs/php-fpm/:/tmp/xdebug_log:cached
-      - ./config/sshagent/keys:/root/.ssh
+      - sshagent:/.ssh-agent
     links:
       - mariadb
     depends_on:
       - mariadb
+      - sshagent
   cache:
     image: 'bitnami/redis:latest'
     container_name: vof_shop_redis_cache_dev
@@ -51,3 +54,13 @@ services:
       - REDIS_PASSWORD=523523
     volumes:
       - ./data/redis:/bitnami/redis/data
+  sshagent:
+    build:
+      context: ./config/sshagent
+      dockerfile: Dockerfile
+    volumes:
+      - ./config/sshagent/keys:/root/.ssh
+      - sshagent:/.ssh-agent
+volumes:
+  sshagent:
+    driver: local
