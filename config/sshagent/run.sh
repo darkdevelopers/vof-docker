@@ -23,7 +23,9 @@ case "$1" in
 
 	# Unlock all SSH-Keys
 	unlock-ssh-keys)
-        for key in ~/.ssh/id_*; do
+	    echo "unlock keys"
+        for key in $HOME/.ssh/bit*; do
+            echo $key
             ssh-add -l | grep -q `ssh-keygen -lf $key  | awk '{print $2}'` || ssh-add $key
         done
         ;;

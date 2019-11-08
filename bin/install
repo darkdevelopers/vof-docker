@@ -30,12 +30,12 @@ downloadProject() {
     rm -rf html
     git clone git@bitbucket.org:vofvapeshop/shop.vof.laravel.git html
     cd html
+    echo -e "${NC} start docker ${NC}"
+    docker-compose up -d
 }
 
 installLaravel() {
     echo -e "${NC}Install Project ${NC} \n"
-    echo -e "${NC} start docker ${NC}"
-    docker-compose up -d
     docker-compose exec php composer install
     docker-compose exec php php artisan larecipe:install
     docker-compose exec php php artisan ui vue
@@ -45,7 +45,12 @@ installLaravel() {
     docker-compose exec php php artisan vendor:publish --tag="ext.laravel.vof.admin" --force
     docker-compose exec php php artisan vendor:publish --tag="ext.laravel.vof.category" --force
 }
+addsshkeys(){
+    echo -e "${NC}Include SSH Keys${NC}\n"
+    docker-compose exec sshagent /run.sh unlock-ssh-keys
+}
 
 introduction
 downloadProject
+addsshkeys
 installLaravel
