@@ -51,6 +51,11 @@ addsshkeys(){
     docker-compose exec sshagentcontainer /run.sh unlock-ssh-keys
 }
 
+seeder(){
+    docker-compose exec php php artisan db:seed --class=Vof\\Category\\Database\\Seeder\\MetaTypeTableSeeder
+    docker-compose exec php php artisan db:seed --class=Vof\\Admin\\Database\\Seeder\\AdminTableSeeder
+}
+
 introduction
 downloadProject
 addsshkeys
