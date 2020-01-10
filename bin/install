@@ -41,12 +41,12 @@ startInstallation() {
   read -r installInput
 
   if [ -z "$installInput" ]; then
-      installInput="Y"
+    installInput="Y"
   fi
 
   if [ $installInput == "N" ] || [ $installInput == "n" ] || [ $installInput != "Y" ] && [ $installInput != "y" ]; then
-      echo "Installation aborded"
-      exit 1
+    echo "Installation aborded"
+    exit 1
   fi
 
   checkDockerIsRunning
@@ -61,11 +61,11 @@ checkDockerIsRunning() {
   echo -ne '##########                       (50%)\r'
   sleep 1
   if [ -z "$ISRUNNING" ] || [ "$ISRUNNING" == "Bad response from Docker engine" ] || [ "$ISRUNNING" == "dial unix docker.raw.sock: connect: connection refused" ]; then
-      echo -ne "####################            (100%)"
-      echo -ne "${RED} ERROR please start the docker software or wait is docker up"
-      echo -ne '\n'
-      echo -e "${NC}"
-      exit 1
+    echo -ne "####################            (100%)"
+    echo -ne "${RED} ERROR please start the docker software or wait is docker up"
+    echo -ne '\n'
+    echo -e "${NC}"
+    exit 1
   fi
   echo -ne "####################            (100%)"
   echo -ne "${GREEN} PASS"
@@ -78,15 +78,15 @@ checkSshIsExists() {
   echo -e "${YELLOW}Step 2: check if ssh key exists${NC}"
   echo -ne '                                  (0%)\r'
   sleep 1
-  SSHKEYS="$(ls ~/.ssh/bitbucket.org* 2> /dev/null)"
+  SSHKEYS="$(ls ~/.ssh/bitbucket.org* 2>/dev/null)"
   echo -ne '##########                       (50%)\r'
   sleep 1
   if [ -z "$SSHKEYS" ]; then
-      echo -ne "####################            (100%)"
-      echo -ne "${RED} ERROR keys not found, place the keys under ${bold}~/.ssh/${normal}"
-      echo -ne '\n'
-      echo -e "${NC}"
-      exit 1
+    echo -ne "####################            (100%)"
+    echo -ne "${RED} ERROR keys not found, place the keys under ${bold}~/.ssh/${normal}"
+    echo -ne '\n'
+    echo -e "${NC}"
+    exit 1
   fi
   echo -ne "####################            (100%)"
   echo -ne "${GREEN} PASS"
@@ -100,16 +100,16 @@ checkIsHtmlFolderExists() {
   echo -e "${YELLOW}Step 3: check if html folder exists${NC}"
   echo -ne '                                  (0%)\r'
   sleep 1
-  FOLDER="$(ls ./html 2> /dev/null)"
+  FOLDER="$(ls ./html 2>/dev/null)"
   echo -ne '##########                       (50%)\r'
   sleep 1
   if [ ! -z "$FOLDER" ]; then
-      echo -ne "####################            (100%)"
-      echo -ne "${RED} ERROR html folder is exists"
-      echo -ne '\n'
-      echo -e "${NC}"
-      deleteHtmlFolder
-      exit 1
+    echo -ne "####################            (100%)"
+    echo -ne "${RED} ERROR html folder is exists"
+    echo -ne '\n'
+    echo -e "${NC}"
+    deleteHtmlFolder
+    exit 1
   fi
   echo -ne "####################            (100%)"
   echo -ne "${GREEN} PASS"
@@ -129,8 +129,8 @@ copySshKeys() {
   cp ~/.ssh/config ./config/sshagent/keys
   echo -ne '##########                       (50%)\r'
   sleep 1
-  SSHKEYS="$(ls ~/.ssh/bitbucket.org* 2> /dev/null | xargs -n 1 basename)"
-  SSHKEYSCOPIED="$(ls ./config/sshagent/keys/bitbucket.org* 2> /dev/null | xargs -n 1 basename)"
+  SSHKEYS="$(ls ~/.ssh/bitbucket.org* 2>/dev/null | xargs -n 1 basename)"
+  SSHKEYSCOPIED="$(ls ./config/sshagent/keys/bitbucket.org* 2>/dev/null | xargs -n 1 basename)"
   echo -ne '###############                  (75%)\r'
   sleep 1
   if [ "$SSHKEYS" != "$SSHKEYSCOPIED" ]; then
@@ -147,17 +147,17 @@ copySshKeys() {
 }
 
 deleteHtmlFolder() {
-    echo ""
-    echo -e "${YELLOW}Step 3.1: delete html folder${NC}"
-    echo -ne '                                  (0%)\r'
-    sleep 1
-    rm -rf ./html
-    echo -ne '##########                       (50%)\r'
-    sleep 1
-    echo -ne "####################            (100%)"
-    echo -ne "${GREEN} PASS"
-    echo -e "${NC}"
-    checkIsHtmlFolderExists
+  echo ""
+  echo -e "${YELLOW}Step 3.1: delete html folder${NC}"
+  echo -ne '                                  (0%)\r'
+  sleep 1
+  rm -rf ./html
+  echo -ne '##########                       (50%)\r'
+  sleep 1
+  echo -ne "####################            (100%)"
+  echo -ne "${GREEN} PASS"
+  echo -e "${NC}"
+  checkIsHtmlFolderExists
 }
 
 introduction
