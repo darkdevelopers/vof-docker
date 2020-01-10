@@ -1,62 +1,163 @@
 #!/bin/bash
 #
 # Usage: bin/install
-# Description: Prepare the VOF docker env for first usage
+# Description: This is the tool is install your local instance.
 #
-
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
+BLUE='\033[1;34m'
+MAGENTA='\033[0;35m'
 NC='\033[0m' # No Color
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
 introduction() {
-    echo -e "${NC}Start the install scripts ${NC} 🐳  🚀 \n"
+  clear
+  echo -e "${GREEN}
+      ##     ##  #######  ########    #### ##    ##  ######  ########    ###    ##       ##       ######## ########
+      ##     ## ##     ## ##           ##  ###   ## ##    ##    ##      ## ##   ##       ##       ##       ##     ##
+      ##     ## ##     ## ##           ##  ####  ## ##          ##     ##   ##  ##       ##       ##       ##     ##
+      ##     ## ##     ## ######       ##  ## ## ##  ######     ##    ##     ## ##       ##       ######   ########
+       ##   ##  ##     ## ##           ##  ##  ####       ##    ##    ######### ##       ##       ##       ##   ##
+        ## ##   ##     ## ##           ##  ##   ### ##    ##    ##    ##     ## ##       ##       ##       ##    ##
+         ###     #######  ##          #### ##    ##  ######     ##    ##     ## ######## ######## ######## ##     ## ${NC}
+
+                                    by Marco Schauer <blackfire2k7@darkdevelopers.de>
+  \n\n"
+  echo -e "Start the install script 🐳 🦄 🚀"
+  echo "This install script is help you for the installation and configuration from the docker enviroment."
+  echo "When the install script failed you can restart this installation script."
+  echo ""
+  echo -e "${RED}Requirements:${NC}"
+  echo "    - SSH KEY for Bitbucket - the name must be \"bitbucket.org-YOURNAME\""
+  echo ""
+  startInstallation
+}
+
+startInstallation() {
+  printf "Start Installation? (Y/n) "
+  read -r installInput
+
+  if [ -z "$installInput" ]; then
+      installInput="Y"
+  fi
+
+  if [ $installInput == "N" ] || [ $installInput == "n" ] || [ $installInput != "Y" ] && [ $installInput != "y" ]; then
+      echo "Installation aborded"
+      exit 1
+  fi
+
+  checkDockerIsRunning
+}
+
+checkDockerIsRunning() {
+  echo ""
+  echo -e "${YELLOW}Step 1: check if docker running${NC}"
+  echo -ne '                                  (0%)\r'
+  sleep 1
+  ISRUNNING="$(curl --silent --unix-socket /var/run/docker.sock http:/ping)"
+  echo -ne '##########                       (50%)\r'
+  sleep 1
+  if [ -z "$ISRUNNING" ] || [ "$ISRUNNING" == "Bad response from Docker engine" ] || [ "$ISRUNNING" == "dial unix docker.raw.sock: connect: connection refused" ]; then
+      echo -ne "####################            (100%)"
+      echo -ne "${RED} ERROR please start the docker software or wait is docker up"
+      echo -ne '\n'
+      echo -e "${NC}"
+      exit 1
+  fi
+  echo -ne "####################            (100%)"
+  echo -ne "${GREEN} PASS"
+  echo -e "${NC}"
+  checkSshIsExists
+}
+
+checkSshIsExists() {
+  echo ""
+  echo -e "${YELLOW}Step 2: check if ssh key exists${NC}"
+  echo -ne '                                  (0%)\r'
+  sleep 1
+  SSHKEYS="$(ls ~/.ssh/bitbucket.org* 2> /dev/null)"
+  echo -ne '##########                       (50%)\r'
+  sleep 1
+  if [ -z "$SSHKEYS" ]; then
+      echo -ne "####################            (100%)"
+      echo -ne "${RED} ERROR keys not found, place the keys under ${bold}~/.ssh/${normal}"
+      echo -ne '\n'
+      echo -e "${NC}"
+      exit 1
+  fi
+  echo -ne "####################            (100%)"
+  echo -ne "${GREEN} PASS"
+  echo -e "${NC}"
+
+  checkIsHtmlFolderExists
+}
+
+checkIsHtmlFolderExists() {
+  echo ""
+  echo -e "${YELLOW}Step 3: check if html folder exists${NC}"
+  echo -ne '                                  (0%)\r'
+  sleep 1
+  FOLDER="$(ls ./html 2> /dev/null)"
+  echo -ne '##########                       (50%)\r'
+  sleep 1
+  if [ ! -z "$FOLDER" ]; then
+      echo -ne "####################            (100%)"
+      echo -ne "${RED} ERROR html folder is exists"
+      echo -ne '\n'
+      echo -e "${NC}"
+      deleteHtmlFolder
+      exit 1
+  fi
+  echo -ne "####################            (100%)"
+  echo -ne "${GREEN} PASS"
+  echo -e "${NC}"
+
+  copySshKeys
+}
+
+copySshKeys() {
+  echo ""
+  echo -e "${YELLOW}Step 4: copy ssh keys to your project${NC}"
+  echo -ne '                                  (0%)\r'
+  sleep 1
+  cp ~/.ssh/bitbucket.org* ./config/sshagent/keys
+  echo -ne '#####                            (25%)\r'
+  sleep 1
+  cp ~/.ssh/config ./config/sshagent/keys
+  echo -ne '##########                       (50%)\r'
+  sleep 1
+  SSHKEYS="$(ls ~/.ssh/bitbucket.org* 2> /dev/null | xargs -n 1 basename)"
+  SSHKEYSCOPIED="$(ls ./config/sshagent/keys/bitbucket.org* 2> /dev/null | xargs -n 1 basename)"
+  echo -ne '###############                  (75%)\r'
+  sleep 1
+  if [ "$SSHKEYS" != "$SSHKEYSCOPIED" ]; then
+    echo -ne "####################            (100%)"
+    echo -ne "${RED} ERROR keys not the same"
+    echo -ne '\n'
+    echo -e "${NC}"
+    exit 1
+  fi
+  echo -ne "####################            (100%)"
+  echo -ne "${GREEN} PASS"
+  echo -e "${NC}"
+
+}
+
+deleteHtmlFolder() {
     echo ""
-    echo -e "${NC}Dieses Installationsskript führt Dich durch die notwendigen Schritte um die Docker-Environment nutzen zu können.${NC}\n"
-    echo -e "${NC}Falls einer der Schritte fehl schlägt kannst du den Setup einfach noch mal starten.${NC}\n"
-
-    echo -e "${NC}Du benötigst:\n${NC}"
-    echo -e "  ${NC}1. Ein SSH-Key-Paar das mit deinem Bitbucket Account verknüpft ist, so dass du die einzelnen Module klonen und bearbeiten kannst.${NC}"
-    echo -e "${NC} Shutdown docker ${NC}"
-    docker-compose down
-}
-
-downloadProject() {
-    echo -e "${NC} COPY SSH KEY${NC}"
-    cp ~/.ssh/bitbucket.org* ./config/sshagent/keys
-    cp ~/.ssh/config ./config/sshagent/keys
-    echo -e ""
-    echo -e "${NC}Cloning Shop repo ${NC}"
-    rm -rf html
-    git clone git@bitbucket.org:vofvapeshop/shop.vof.laravel.git html
-    cd html
-    echo -e "${NC} start docker ${NC}"
-    docker-compose up -d
-}
-
-installLaravel() {
-    echo -e "${NC}Install Project ${NC} \n"
-    docker-compose exec php composer install
-    docker-compose exec php php artisan larecipe:install
-    docker-compose exec php php artisan ui vue
-    docker-compose exec php npm install
-    docker-compose exec php npm run dev
-    docker-compose exec php php artisan migrate
-    docker-compose exec php php artisan vendor:publish --tag="ext.laravel.vof.admin" --force
-    docker-compose exec php php artisan vendor:publish --tag="ext.laravel.vof.category" --force
-}
-addsshkeys(){
-    echo -e "${NC}Include SSH Keys${NC}\n"
-    docker-compose exec sshagentcontainer /run.sh ssh-add
-    docker-compose exec sshagentcontainer /run.sh unlock-ssh-keys
-}
-
-seeder(){
-    docker-compose exec php php artisan db:seed --class=Vof\\Category\\Database\\Seeder\\MetaTypeTableSeeder
-    docker-compose exec php php artisan db:seed --class=Vof\\Admin\\Database\\Seeder\\AdminTableSeeder
+    echo -e "${YELLOW}Step 3.1: delete html folder${NC}"
+    echo -ne '                                  (0%)\r'
+    sleep 1
+    rm -rf ./html
+    echo -ne '##########                       (50%)\r'
+    sleep 1
+    echo -ne "####################            (100%)"
+    echo -ne "${GREEN} PASS"
+    echo -e "${NC}"
+    checkIsHtmlFolderExists
 }
 
 introduction
-downloadProject
-addsshkeys
-installLaravel

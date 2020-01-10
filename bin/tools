@@ -1,0 +1,41 @@
+#!/bin/bash
+#
+# Usage: bin/tools
+# Description: This is the tool to controll your Instance
+#
+usage="$(basename "$0") -- programm is install / update / console access to your local instance
+
+where:
+    --help                          show this help text
+    --install [branch]              installation the software per default the develop branch
+    --genssh                        generate a new ssh key for you
+    --console                       access to the docker console
+    --deploy [branch/tag] [server]  deploy to the version to your selected server"
+
+case "$1" in
+  --help)
+      echo "bin/$usage" >&2
+      exit 1
+      ;;
+  --install)
+      echo "bin/tools $1 $2" >&2
+      exit 1
+      ;;
+  --genssh)
+      echo "under construction" >&2
+      exit 1
+      ;;
+  --console)
+      echo "under construction" >&2
+      exit 1
+      ;;
+  --deploy)
+      echo "under construction" >&2
+      exit 1
+      ;;
+  *)
+      echo "bin/$usage" >&2
+      exit 1
+      ;;
+
+esac

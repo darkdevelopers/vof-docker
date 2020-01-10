@@ -1,0 +1,62 @@
+#!/bin/bash
+#
+# Usage: bin/install
+# Description: Prepare the VOF docker env for first usage
+#
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+introduction() {
+    echo -e "${NC}Start the install scripts ${NC} 🐳  🚀 \n"
+    echo ""
+    echo -e "${NC}Dieses Installationsskript führt Dich durch die notwendigen Schritte um die Docker-Environment nutzen zu können.${NC}\n"
+    echo -e "${NC}Falls einer der Schritte fehl schlägt kannst du den Setup einfach noch mal starten.${NC}\n"
+
+    echo -e "${NC}Du benötigst:\n${NC}"
+    echo -e "  ${NC}1. Ein SSH-Key-Paar das mit deinem Bitbucket Account verknüpft ist, so dass du die einzelnen Module klonen und bearbeiten kannst.${NC}"
+    echo -e "${NC} Shutdown docker ${NC}"
+    docker-compose down
+}
+
+downloadProject() {
+    echo -e "${NC} COPY SSH KEY${NC}"
+    cp ~/.ssh/bitbucket.org* ./config/sshagent/keys
+    cp ~/.ssh/config ./config/sshagent/keys
+    echo -e ""
+    echo -e "${NC}Cloning Shop repo ${NC}"
+    rm -rf html
+    git clone -b develop git@bitbucket.org:vofvapeshop/shop.vof.laravel.git html
+    cd html
+    echo -e "${NC} start docker ${NC}"
+    docker-compose up -d
+}
+
+installLaravel() {
+    echo -e "${NC}Install Project ${NC} \n"
+    docker-compose exec php composer install
+    docker-compose exec php php artisan larecipe:install
+    docker-compose exec php php artisan ui vue
+    docker-compose exec php npm install
+    docker-compose exec php npm run dev
+    docker-compose exec php php artisan migrate
+    docker-compose exec php php artisan vendor:publish --tag="ext.laravel.vof.admin" --force
+    docker-compose exec php php artisan vendor:publish --tag="ext.laravel.vof.category" --force
+}
+addsshkeys(){
+    echo -e "${NC}Include SSH Keys${NC}\n"
+    docker-compose exec sshagentcontainer /run.sh ssh-add
+    docker-compose exec sshagentcontainer /run.sh unlock-ssh-keys
+}
+
+seeder(){
+    docker-compose exec php php artisan db:seed --class=Vof\\Category\\Database\\Seeder\\MetaTypeTableSeeder
+    docker-compose exec php php artisan db:seed --class=Vof\\Admin\\Database\\Seeder\\AdminTableSeeder
+}
+
+introduction
+downloadProject
+addsshkeys
+installLaravel
