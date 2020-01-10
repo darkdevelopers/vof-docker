@@ -13,6 +13,8 @@ NC='\033[0m' # No Color
 bold=$(tput bold)
 normal=$(tput sgr0)
 
+branch="develop"
+
 introduction() {
   clear
   echo -e "${GREEN}
@@ -53,6 +55,7 @@ startInstallation() {
 }
 
 checkDockerIsRunning() {
+  echo "Now you can take a coffee this take a while."
   echo ""
   echo -e "${YELLOW}Step 1: check if docker running${NC}"
   echo -ne '                                  (0%)\r'
@@ -63,7 +66,6 @@ checkDockerIsRunning() {
   if [ -z "$ISRUNNING" ] || [ "$ISRUNNING" == "Bad response from Docker engine" ] || [ "$ISRUNNING" == "dial unix docker.raw.sock: connect: connection refused" ]; then
     echo -ne "####################            (100%)"
     echo -ne "${RED} ERROR please start the docker software or wait is docker up"
-    echo -ne '\n'
     echo -e "${NC}"
     exit 1
   fi
@@ -84,7 +86,6 @@ checkSshIsExists() {
   if [ -z "$SSHKEYS" ]; then
     echo -ne "####################            (100%)"
     echo -ne "${RED} ERROR keys not found, place the keys under ${bold}~/.ssh/${normal}"
-    echo -ne '\n'
     echo -e "${NC}"
     exit 1
   fi
@@ -106,7 +107,6 @@ checkIsHtmlFolderExists() {
   if [ ! -z "$FOLDER" ]; then
     echo -ne "####################            (100%)"
     echo -ne "${RED} ERROR html folder is exists"
-    echo -ne '\n'
     echo -e "${NC}"
     deleteHtmlFolder
     exit 1
@@ -136,7 +136,6 @@ copySshKeys() {
   if [ "$SSHKEYS" != "$SSHKEYSCOPIED" ]; then
     echo -ne "####################            (100%)"
     echo -ne "${RED} ERROR keys not the same"
-    echo -ne '\n'
     echo -e "${NC}"
     exit 1
   fi
@@ -144,6 +143,59 @@ copySshKeys() {
   echo -ne "${GREEN} PASS"
   echo -e "${NC}"
 
+  downloadProject
+}
+
+downloadProject() {
+  echo ""
+  echo -e "${YELLOW}Step 5: download project${NC}"
+  git clone -b $branch git@bitbucket.org:vofvapeshop/shop.vof.laravel.git html
+  echo -ne "####################            (100%)"
+  echo -ne "${GREEN} PASS"
+  echo -e "${NC}"
+
+  startDockerContainers
+}
+
+startDockerContainers() {
+  echo ""
+  echo -e "${YELLOW}Step 6: start docker containers${NC}"
+  docker-compose up -d
+  echo -ne "####################            (100%)"
+  echo -ne "${GREEN} PASS"
+  echo -e "${NC}"
+
+  addSshkeys
+}
+
+addSshkeys() {
+  echo ""
+  echo -e "${YELLOW}Step 7: install ssh keys in docker${NC}"
+  chmod -R 600 ./config/sshagent/keys/bitbucket.org*
+  docker-compose exec sshagentcontainer /run.sh ssh-add
+  docker-compose exec sshagentcontainer /run.sh unlock-ssh-keys
+  echo -ne "####################            (100%)"
+  echo -ne "${GREEN} PASS"
+  echo -e "${NC}"
+
+  installLaravel
+}
+
+installLaravel() {
+  echo ""
+  echo -e "${YELLOW}Step 7: install laravel${NC}"
+  docker-compose exec php composer install
+  docker-compose exec php php artisan larecipe:install
+  docker-compose exec php php artisan ui vue
+  docker-compose exec php npm install
+  docker-compose exec php npm audit fix
+  docker-compose exec php npm run dev
+  docker-compose exec php php artisan migrate
+  docker-compose exec php php artisan vendor:publish --tag="ext.laravel.vof.admin" --force
+  docker-compose exec php php artisan vendor:publish --tag="ext.laravel.vof.category" --force
+  echo -ne "####################            (100%)"
+  echo -ne "${GREEN} PASS"
+  echo -e "${NC}"
 }
 
 deleteHtmlFolder() {
@@ -157,6 +209,7 @@ deleteHtmlFolder() {
   echo -ne "####################            (100%)"
   echo -ne "${GREEN} PASS"
   echo -e "${NC}"
+
   checkIsHtmlFolderExists
 }
 
