@@ -193,6 +193,7 @@ installLaravel() {
   docker-compose exec php php artisan migrate
   docker-compose exec php php artisan vendor:publish --tag="ext.laravel.vof.admin" --force
   docker-compose exec php php artisan vendor:publish --tag="ext.laravel.vof.category" --force
+  docker-compose exec php php artisan vendor:publish --tag="ext.laravel.vof.assets" --force
   echo -ne "####################            (100%)"
   echo -ne "${GREEN} PASS"
   echo -e "${NC}"
